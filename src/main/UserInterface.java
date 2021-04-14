@@ -36,7 +36,6 @@ public class UserInterface {
                 rwdTimeBtn.setEnabled(true);
                 zoomTemperatureCheckBox.setEnabled(true);
                 zoomWavelengthCheckBox.setEnabled(true);
-                String temp = "";
                 if (timeIndex >= -1 && timeIndex < 13) {
                     timeIndex++;
                 }

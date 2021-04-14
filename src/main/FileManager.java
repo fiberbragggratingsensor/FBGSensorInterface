@@ -1,6 +1,7 @@
 package main;
 
 import java.io.*;
+import java.util.Objects;
 
 public class FileManager {
     private String filename;
@@ -232,4 +233,49 @@ public class FileManager {
         }
     }
 
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
+
+    public String getExtension() {
+        return extension;
+    }
+
+    public void setExtension(String extension) {
+        this.extension = extension;
+    }
+
+    public int getLines() {
+        return lines;
+    }
+
+    public void setLines(int lines) {
+        this.lines = lines;
+    }
+
+    @Override
+    public String toString() {
+        return "FileManager{" +
+                "filename='" + filename + '\'' +
+                ", extension='" + extension + '\'' +
+                ", lines=" + lines +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        FileManager that = (FileManager) o;
+        return lines == that.lines && filename.equals(that.filename) && extension.equals(that.extension);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(filename, extension, lines);
+    }
 }
